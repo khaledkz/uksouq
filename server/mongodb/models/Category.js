@@ -2,9 +2,9 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const schema = new Schema({
-    username: String     
+    title: String     
 });
 
-const User = mongoose.model('user', schema);
+const Category = mongoose.model('category', schema);
 
-module.exports = User;
+module.exports = Category;

@@ -22,5 +22,12 @@ router.post('/add', (req, res, next) => {
   productDB.addProduct(req.body,cb)
  });
 
+ router.get("/edit/all", (req, res, next) => {
+  cb = data => {
+    res.render("product/list", { data });
+  };
+  productDB.findProduct(cb);
+});
+
 
 module.exports = router;

@@ -6,6 +6,9 @@ const ObjectId = require("mongodb").ObjectID;
 const UserDB = {
   addUser: (query, callback) => {
     return User.create(query).then(callback);
+  },
+  findUser:(callback)=>{
+      return User.find({}).then(callback);
   }
 };
 

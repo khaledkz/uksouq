@@ -10,4 +10,9 @@ router.get('/edit', function(req, res, next) {
   res.render('user/searchMenu');
 });
 
+router.get('/add', (req, res, next) => {
+  res.render('user/add');
+});
+ 
+
 module.exports = router;

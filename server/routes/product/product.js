@@ -6,4 +6,10 @@ router.get('/', (req, res, next) => {
   res.render('product/menu');
 });
 
+router.get('/edit', (req, res, next) => {
+  res.render('product/searchMenu');
+});
+
+ 
+
 module.exports = router;

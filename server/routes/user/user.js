@@ -33,11 +33,15 @@ router.get("/edit/all/:singleUser", (req, res, next) => {
   cb = data => res.render("user/single", { data });
   UserDB.findUserById(singleUser, cb);
 });
-
 router.get("/delete/:singleUser", (req, res, next) => {
   const { singleUser } = req.params;
   cb = () => res.redirect("/user/edit/all");
   UserDB.removeUserById(singleUser, cb);
+});
+router.get("/update/:id", (req, res, next) => {
+  const { id } = req.params;
+   cb = (data) => res.render("user/edit",{data});
+   UserDB.findUserById(id, cb);
 });
 
 module.exports = router;

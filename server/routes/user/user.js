@@ -16,7 +16,7 @@ router.get("/add", (req, res, next) => {
 
 router.post("/add", (req, res, next) => {
   cb = () => {
-    res.redirect("/");
+    res.redirect("/user/edit/all");
   };
   UserDB.addUser(req.body, cb);
 });
@@ -32,6 +32,12 @@ router.get("/edit/all/:singleUser", (req, res, next) => {
   const { singleUser } = req.params;
   cb = data => res.render("user/single", { data });
   UserDB.findUserById(singleUser, cb);
+});
+
+router.get("/delete/:singleUser", (req, res, next) => {
+  const { singleUser } = req.params;
+  cb = () => res.redirect("/user/edit/all");
+  UserDB.removeUserById(singleUser, cb);
 });
 
 module.exports = router;

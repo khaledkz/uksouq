@@ -12,6 +12,9 @@ const ProductDB = {
   },
   findProductById: (id, callback) => {
     return Product.findById(id).then(callback);
+  },
+  removeProductById:(id,cb)=>{
+    return Product.remove({_id:ObjectId(id)}).then(cb)
   }
 };
 

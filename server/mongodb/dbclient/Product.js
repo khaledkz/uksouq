@@ -7,8 +7,11 @@ const ProductDB = {
   addProduct: (query, callback) => {
     return Product.create(query).then(callback);
   },
-  findProduct:(callback)=>{
-      return Product.find({}).then(callback);
+  findProduct: callback => {
+    return Product.find({}).then(callback);
+  },
+  findProductById: (id, callback) => {
+    return Product.findById(id).then(callback);
   }
 };
 

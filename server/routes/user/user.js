@@ -28,5 +28,10 @@ router.get("/edit/all", (req, res, next) => {
   };
   UserDB.findUser(cb);
 });
+router.get("/edit/all/:singleUser", (req, res, next) => {
+  const { singleUser } = req.params;
+  cb = data => res.render("user/single", { data });
+  UserDB.findUserById(singleUser, cb);
+});
 
 module.exports = router;

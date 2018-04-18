@@ -9,6 +9,9 @@ const CategoryDb = {
   },
   findCategory: callback => {
     return Category.find({}).then(callback);
+  },
+  findCategoryById: (id, callback) => {
+    return Category.findById(id).then(callback);
   }
 };
 

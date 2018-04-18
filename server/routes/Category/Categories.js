@@ -25,5 +25,13 @@ router.get("/edit/all", (req, res, next) => {
   };
   CategoryDb.findCategory(cb);
 });
+ router.get("/edit/all/:singleCategory", (req, res, next) => {
+  const { singleCategory } = req.params;
+    cb=(data)=>(
+        res.render("category/single",{data})
+    )
+   CategoryDb.findCategoryById(singleCategory,cb)
+});
+
 
 module.exports = router;

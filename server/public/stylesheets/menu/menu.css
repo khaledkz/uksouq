@@ -3,7 +3,7 @@
   margin:0;
 }
 .edit-search-options {
-  background: #007bff;
+  background: #007BFE;
   margin-left: 25%;
   padding: 35px;
   max-width: 90%;
@@ -15,7 +15,7 @@
 
   list-style: none;
   margin: 2px;
-  background: black;
+  background: rgb(20, 21, 24);
   text-align: center;
   border: solid 1px white;
   cursor: pointer;
@@ -23,7 +23,7 @@
 .edit-search-options li:hover {
   text-decoration: none;
   color: white;
-  background: rgba(0, 0, 0, 0.685);
+  background: rgb(41, 44, 49);
 }
 .edit-search-options a:hover {
   text-decoration: none;

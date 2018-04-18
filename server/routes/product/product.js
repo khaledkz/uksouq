@@ -13,7 +13,7 @@ router.get("/add", (req, res, next) => {
 });
 router.post("/add", (req, res, next) => {
   cb = () => {
-    return res.redirect("/");
+    return res.redirect("/product/edit/all");
   };
   productDB.addProduct(req.body, cb);
 });
@@ -27,6 +27,11 @@ router.get("/edit/all/:id", (req, res, next) => {
   const { id } = req.params;
   cb = data => res.render("product/single", { data });
   productDB.findProductById(id, cb);
+});
+router.get("/delete/:id", (req, res, next) => {
+  const { id } = req.params;
+  cb = () => res.redirect("/product/edit/all");
+  productDB.removeProductById(id, cb);
 });
 
 module.exports = router;

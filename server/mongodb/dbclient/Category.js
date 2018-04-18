@@ -12,6 +12,9 @@ const CategoryDb = {
   },
   findCategoryById: (id, callback) => {
     return Category.findById(id).then(callback);
+  },
+  removeCategoryById:(id,cb)=>{
+    return Category.remove({_id:ObjectId(id)}).then(cb)
   }
 };
 

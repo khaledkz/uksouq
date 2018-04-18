@@ -36,6 +36,12 @@ router.get("/update/:id", (req, res, next) => {
    cb = (data) => res.render("category/edit",{data});
    CategoryDb.findCategoryById(id, cb);
 });
+router.post("/update/:id", (req, res, next) => {
+  const { id } = req.params;
+  cb = () => res.redirect(`/category/edit/all`);
+   CategoryDb.updateCategory(id,req.body,cb);
+});
+
 
 
 module.exports = router;

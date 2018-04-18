@@ -12,6 +12,9 @@ const UserDB = {
   },
   findUserById: (id, callback) => {
     return User.findById(id).then(callback);
+  },
+  removeUserById:(id,cb)=>{
+    return User.remove({_id:ObjectId(id)}).then(cb)
   }
 };
 

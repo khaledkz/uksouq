@@ -33,5 +33,10 @@ router.get("/delete/:id", (req, res, next) => {
   cb = () => res.redirect("/product/edit/all");
   productDB.removeProductById(id, cb);
 });
+router.get("/update/:id", (req, res, next) => {
+  const { id } = req.params;
+   cb = (data) => res.render("product/edit",{data});
+   productDB.findProductById(id, cb);
+});
 
 module.exports = router;

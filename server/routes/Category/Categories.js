@@ -15,7 +15,7 @@ router.get("/add", (req, res, next) => {
 });
 
 router.post("/add", (req, res, next) => {
-  cb = () => res.redirect("/");
+  cb = () => res.redirect("/category/edit/all");
   CategoryDb.addCategory(req.body, cb);
 });
 
@@ -31,6 +31,15 @@ router.get("/edit/all", (req, res, next) => {
         res.render("category/single",{data})
     )
    CategoryDb.findCategoryById(singleCategory,cb)
+});
+
+
+router.get("/delete/:singleCategory", (req, res, next) => {
+  const { singleCategory } = req.params;
+    cb=()=>(
+        res.redirect("/category/edit/all")
+    )
+   CategoryDb.removeCategoryById(singleCategory,cb)
 });
 
 

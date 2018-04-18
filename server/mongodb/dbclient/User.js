@@ -7,8 +7,11 @@ const UserDB = {
   addUser: (query, callback) => {
     return User.create(query).then(callback);
   },
-  findUser:(callback)=>{
-      return User.find({}).then(callback);
+  findUser: callback => {
+    return User.find({}).then(callback);
+  },
+  findUserById: (id, callback) => {
+    return User.findById(id).then(callback);
   }
 };
 

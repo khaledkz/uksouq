@@ -15,7 +15,10 @@ const ProductDB = {
   },
   removeProductById:(id,cb)=>{
     return Product.remove({_id:ObjectId(id)}).then(cb)
-  }
+  },
+  updateProduct:(id,query,cb)=>(
+     Product.update({_id:ObjectId(id)},{$set: query}).then(cb)
+  )
 };
 
 module.exports = ProductDB;

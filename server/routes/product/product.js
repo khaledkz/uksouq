@@ -38,5 +38,12 @@ router.get("/update/:id", (req, res, next) => {
    cb = (data) => res.render("product/edit",{data});
    productDB.findProductById(id, cb);
 });
+router.post('/update/:id',(req,res,next)=>{
+  const { id } = req.params;
+  cb=()=>{
+    res.redirect('/product/edit/all')
+  }
+   productDB.updateProduct(id,req.body,cb)
+})
 
 module.exports = router;

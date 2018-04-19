@@ -17,7 +17,7 @@ const CategoryDb = {
     return Category.remove({_id:ObjectId(id)}).then(cb)
   },
   updateCategory:(id,query,cb)=>(
-     Category.update({_id:ObjectId(id)},{$set: query},{upsert:true}).then(cb)
+     Category.update({_id:ObjectId(id)},{$set: query}).then(cb)
   )
 };
 

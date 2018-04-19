@@ -15,7 +15,10 @@ const UserDB = {
   },
   removeUserById:(id,cb)=>{
     return User.remove({_id:ObjectId(id)}).then(cb)
-  }
+  },
+  updateUser:(id,query,cb)=>(
+    User.update({_id:ObjectId(id)},{$set: query}).then(cb)
+  )
 };
 
 module.exports = UserDB;

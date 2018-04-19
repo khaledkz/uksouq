@@ -43,5 +43,12 @@ router.get("/update/:id", (req, res, next) => {
    cb = (data) => res.render("user/edit",{data});
    UserDB.findUserById(id, cb);
 });
+router.post('/update/:id',(req,res,next)=>{
+  const { id } = req.params;
+  cb=()=>{
+    res.redirect('/user/edit/all')
+  }
+  UserDB.updateUser(id,req.body,cb)
+})
 
 module.exports = router;
